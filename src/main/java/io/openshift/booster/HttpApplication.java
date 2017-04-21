@@ -15,6 +15,10 @@ public class HttpApplication extends AbstractVerticle {
 
   @Override
   public void start(Future<Void> future) {
+    vertx.setPeriodic(2000, l -> {
+      System.out.println("Hello Vert.x World!");
+    });
+
     // Create a router object.
     Router router = Router.router(vertx);
 
